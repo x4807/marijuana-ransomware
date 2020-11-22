@@ -1,0 +1,26 @@
+table {
+	width: 50%;
+}
+
+th, td  {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+th {
+	background-color: #f1f3f8;
+}
+
+tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+#marijuana {
+	background-image: url("images/marijuana.png") no-repeat;
+	float: right;
+	width: 300px;
+	height: 300px;
+}
+
+

